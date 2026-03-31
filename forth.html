@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Tracker - To Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      width: 100%;
+      max-width: 700px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .input-group {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr auto;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      background: #4f46e5;
+      color: white;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filters button {
+      background: #e5e7eb;
+      color: black;
+    }
+
+    .filters button.active {
+      background: #4f46e5;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #f9fafb;
+      border-radius: 5px;
+    }
+
+    li.completed span.task-text {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .task-info {
+      font-size: 12px;
+      color: gray;
+    }
+
+    .priority-high { color: red; font-weight: bold; }
+    .priority-medium { color: orange; font-weight: bold; }
+    .priority-low { color: green; font-weight: bold; }
+
+    .stats {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .delete {
+      background: red;
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Work Tracker / To-Do List</h1>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Task description" />
+      <input type="date" id="dueDate" />
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <div class="filters">
+      <button onclick="setFilter('all')" id="allBtn" class="active">All</button>
+      <button onclick="setFilter('pending')" id="pendingBtn">Pending</button>
+      <button onclick="setFilter('completed')" id="completedBtn">Completed</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <script>
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    let currentFilter = 'all';
+
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function addTask() {
+      const text = document.getElementById('taskInput').value.trim();
+      const dueDate = document.getElementById('dueDate').value;
+      const priority = document.getElementById('priority').value;
+
+      if (!text) return;
+
+      tasks.unshift({
+        id: Date.now(),
+        text,
+        dueDate,
+        priority,
+        completed: false,
+        createdAt: new Date().toLocaleString()
+      });
+
+      document.getElementById('taskInput').value = '';
+      document.getElementById('dueDate').value = '';
+      document.getElementById('priority').value = 'low';
+
+      saveTasks();
+      renderTasks();
+    }
+
+    function toggleTask(id) {
+      tasks = tasks.map(task =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      );
+      saveTasks();
+      renderTasks();
+    }
+
+    function deleteTask(id) {
+      tasks = tasks.filter(task => task.id !== id);
+      saveTasks();
+      renderTasks();
+    }
+
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(filter + 'Btn').classList.add('active');
+      renderTasks();
+    }
+
+    function renderTasks() {
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+
+      const filtered = tasks.filter(task => {
+        if (currentFilter === 'completed') return task.completed;
+        if (currentFilter === 'pending') return !task.completed;
+        return true;
+      });
+
+      filtered.forEach(task => {
+        const li = document.createElement('li');
+        if (task.completed) li.classList.add('completed');
+
+        const priorityClass = `priority-${task.priority}`;
+
+        li.innerHTML = `
+          <div>
+            <input type="checkbox" ${task.completed ? 'checked' : ''} onclick="toggleTask(${task.id})" />
+            <span class="task-text">${task.text}</span>
+            <div class="task-info">
+              Due: ${task.dueDate || 'No date'} | 
+              Priority: <span class="${priorityClass}">${task.priority.toUpperCase()}</span>
+            </div>
+          </div>
+          <button class="delete" onclick="deleteTask(${task.id})">Delete</button>
+        `;
+
+        list.appendChild(li);
+      });
+
+      const completedCount = tasks.filter(t => t.completed).length;
+      document.getElementById('stats').innerText =
+        `Total: ${tasks.length} | Completed: ${completedCount}`;
+    }
+
+    document.getElementById('taskInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') addTask();
+    });
+
+    renderTasks();
+  </script>
+</body>
+</html>

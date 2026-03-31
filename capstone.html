@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful Travel Agency</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: white;
+        }
+
+        .navbar h2 {
+            color: #1976d2;
+            margin: 0;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80') center/cover;
+            padding: 120px;
+            color: white;
+            text-align: center;
+            position: relative;
+            margin-left: 10%;
+            /* margin-right:; */
+        }
+
+        .hero-overlay {
+            background: rgba(25, 118, 210, 0.6);
+            padding: 60px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 16px;
+            width: 70%;
+            margin: 10px auto;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: #ffca28;
+            color: black;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        
+        .destinations {
+            margin: 30px;
+            font-size: 18px;
+            color: #1976d2;
+            font-weight: bold;
+        }
+
+        .image-list {
+            margin-left: 30px;
+        }
+
+        .image-list img {
+            width: 140px;
+            height: 90px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+        }
+
+        .layout {
+            display: flex;
+        }
+        .hello{
+            display: flex;
+            justify-content: ;
+            align-items: center;
+        }
+        .he{
+            display: flex;
+            justify-content: ;
+            align-items: center;
+        }
+.layout{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.section-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.package{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lays{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.tilt{
+    color: #1976d2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pack{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.blog-section h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.blog-card {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.blog-card img {
+    width: 140px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.blog-text {
+    padding: 12px;
+}
+
+
+.blog-text h4 {
+    margin-bottom: 6px;
+}
+
+.blog-text a {
+    display: block;
+    margin-top: 6px;
+    color: #0057d9;
+    font-weight: 600;
+}
+
+
+.stats {
+    display: grid;
+    gap: 15px;
+}
+
+.stat-box {
+    background: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.stat-box h2 {
+    color: #0057d9;
+    font-size: 30px;
+}
+.blog-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blog-card{
+display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+
+
+
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f6f8fb;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #555;
+}
+
+
+section h2 {
+    text-align: center;
+    padding: 30px 0;
+    color: #007bff;
+}
+
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+
+.testi-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.testi-card {
+    width: 280px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.testi-card img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.stat-box {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.stat-box span {
+    display: block;
+    font-size: 14px;
+    color: black;
+}
+
+
+.newsletter {
+    text-align: center;
+    padding: 50px;
+    background: #007bff;
+    color: white;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background: white;
+    color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #1976d2;
+        margin-bottom: 20px;
+    }
+
+    .layout {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    
+    .step-card {
+        width: 230px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        background: #1976d2;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .step-title {
+        color: #1976d2;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .step-text {
+        color: #555;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    
+    .testimonial-card {
+        width: 350px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        margin-bottom: 20px;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .user-info img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+
+    .user-name {
+        font-size: 15px;
+        font-weight: bold;
+        color: #1976d2;
+    }
+
+    .review {
+        color: #555;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .stars {
+        color: gold;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .section-title {
+            color: #1976d2;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .layout {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        
+        .dest-card {
+            width: 220px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dest-card img {
+            width: 100%;
+            height: 140px;
+            border-radius: 12px;
+        }
+
+        .dest-title {
+            color: #1976d2;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .dest-text {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        
+        .package-container {
+            width: 260px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border-left: 5px solid #1976d2;
+        }
+
+        .package-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1976d2;
+            margin-bottom: 5px;
+        }
+
+        .package-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff9800;
+            margin: 10px 0;
+        }
+
+        .days {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 10px 25px;
+            background: #1976d2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #125aa2;
+        }
+    </style>
+    <link rel="stylesheet" href="capstone.css">
+</head>
+<body>
+
+    
+    <div class="navbar">
+        <h2>Wonderful</h2>
+        <div class="nav-links">
+            <a href="#">Destinations</a>
+            <a href="#">Packages</a>
+            <a href="#">How it Works</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <section class="hello">
+    <div class="hero">
+            <div class="hero-overlay">
+                <h1>Explore the World with Wonderful</h1>
+                <p>Your adventure starts here. Discover breathtaking destinations, curated tours and unforgettable experiences.</p>
+                <button class="btn">Start Your Journey</button>
+            </div>
+        </div></section></div>
+    <br><br><br>
+<h2 class="section-title">Popular Destinations</h2>
+
+    <div class="layout">
+
+
+            <div class="dest-card">
+                <img src="https://www.riu.com/blog/wp-content/uploads/2020/09/riu-maldivas-scaled.jpg" alt="Maldives">
+                <p class="dest-title">Maldives</p>
+                <p class="dest-text">Crystal clear waters and white sandy beaches.</p>
+            </div>
+
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=600" alt="">
+                <p class="dest-title">Paris</p>
+                <p class="dest-text">The city of lights and romance awaits you.</p>
+            </div>
+
+            <div class="dest-card">
+                <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600" alt="">
+                <p class="dest-title">Bali</p>
+                <p class="dest-text">Experience the magic of tropical paradise.</p>
+            </div>
+
+            <div class="dest-card">
+                <img src="https://th.bing.com/th/id/R.da4792fb26276e938673e9b9f56b3fb5?rik=untGmq7DXoKH1g&riu=http%3a%2f%2fwww.usatipps.de%2fwp-content%2fuploads%2f2012%2f07%2fnew-york-city.jpg&ehk=SfwUM0lnqRUoDkndO%2fyS%2btIeVzqs0WKI8LRUWTQIN9Y%3d&risl=&pid=ImgRaw&r=0" alt="New york">
+                <p class="dest-title">New York</p>
+                <p class="dest-text">The city that never sleeps.</p>
+            </div>
+        </div>
+<br>
+<br><br>
+        
+        <div>
+            <h2 class="section-title">Tour Packages</h2>
+<div class="package">
+            <div class="package-container">
+                <p class="package-title">Maldives Escape</p>
+                <p class="package-text">Luxury resort, snorkeling, island hopping</p>
+                <p class="price">$1499</p>
+                <p class="days">7 Days / 6 Nights</p>
+                <button class="btn">Book Now</button>
+            </div>
+
+            <div class="package-container">
+                <p class="package-title">Paris Discovery</p>
+                <p class="package-text">Eiffel Tower, Louvre, Seine Cruise</p>
+                <p class="price">$1199</p>
+                <p class="days">5 Days / 4 Nights</p>
+                <button class="btn">Book Now</button>
+            </div>
+
+            <div class="package-container">
+                <p class="package-title">Bali Adventure</p>
+                <p class="package-text">Temples, rice terraces, beaches</p>
+                <p class="price">$999</p>
+                <p class="days">6 Days / 5 Nights</p>
+                <button class="btn">Book Now</button>
+            </div>
+
+             <br>
+            <div class="package-container">
+                <p class="package-title">New York Explorer</p>
+                <p class="package-text">Statue of liberty,Museums,Broadway</p>
+                <p class="price">$1999</p>
+                <p class="days">6 Days / 5 Nights</p>
+                <button class="btn">Book Now</button>
+            </div>
+        </div>
+    </div></div>
+<br><br><br>
+
+<h2 class="title">How It Works</h2>
+
+<div class="lays">
+
+
+    
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <p class="step-title">Choose Destination</p>
+            <p class="step-text">Browse curated destinations and pick your dream trip.</p>
+        </div>
+
+        <div class="step-card" style="margin-top:20px;">
+            <div class="step-number">2</div>
+            <p class="step-title">Book Your Tour</p>
+            <p class="step-text">Reserve your tour securely with our online booking system.</p>
+        </div>
+
+        <div class="step-card" style="margin-top:20px;">
+            <div class="step-number">3</div>
+            <p class="step-title">Enjoy & Explore</p>
+            <p class="step-text">Pack your bags and get ready for unforgettable adventures!</p>
+        </div>
+    </div>
+<br><br><br>
+    
+    <div>
+        <h2 class="tilt">Traveler Testimonials</h2>
+<div class="pack">
+        <div class="testimonial-card">
+            <div class="user-info">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg">
+                <span class="user-name">Emily R.</span>
+            </div>
+            <p class="review">"Wanderlust made my honeymoon in Maldives absolutely magical! Everything was perfectly organized!"</p>
+            <p class="stars">★★★★★</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="user-info">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg">
+                <span class="user-name">James T.</span>
+            </div>
+            <p class="review">"The Paris trip was a dream come true. Highly recommend their services!"</p>
+            <p class="stars">★★★★★</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="user-info">
+                <img src="https://randomuser.me/api/portraits/women/3.jpg">
+                <span class="user-name">Sophia L.</span>
+            </div>
+            <p class="review">"Bali was breathtaking and the guides were so friendly. Will book again!"</p>
+            <p class="stars">★★★★★</p>
+        </div>
+    </div></div>
+</div>
+<div class="text">
+
+
+
+        <div class="stats">
+            <div class="stat-box">
+                <h2>10</h2>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-box">
+                <h2>50+</h2>
+                <p>Tour Packages</p>
+            </div>
+            <div class="stat-box">
+                <h2>5K+</h2>
+                <p>Happy Travelers</p>
+            </div>
+            <div class="stat-box">
+                <h2>20+</h2>
+                <p>Cities Served</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<section class="contact-container">
+    <div class="contact-box">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button>Send Message</button>
+        </form>
+    </div>
+
+    
+    <div class="map">
+        <img src="https://picsum.photos/350/250?random=4" alt="map">
+        <button class="map-btn">Map Location</button>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>Wonderful</h3>
+            <p>About Us</p>
+            <p>Our Team</p>
+            <p>Careers</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Destinations</h3>
+            <p>Maldives</p>
+            <p>Paris</p>
+            <p>Bali</p>
+            <p>New York</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Support</h3>
+            <p>FAQ</p>
+            <p>Contact</p>
+            <p>Terms & Conditions</p>
+            <p>Privacy Policy</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+        </div>
+
+    </div>
+
+    <p class="copyright">© 2025 Wonderful Travel Agency. All rights reserved.</p>
+</footer>
+<a href="#" class="back-to-top">↑ Back to Top</a>
+</body>
+</html>

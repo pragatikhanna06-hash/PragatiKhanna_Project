@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f3f3;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1E3A8A;
+    color: white;
+    padding: 15px 40px;
+}
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.header nav a:hover {
+    text-decoration: underline;
+}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+       flex-wrap: wrap;
+    background: #f7f7f7;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.highlight {
+    color: #f57c00;
+    animation: colorChange 3s infinite;
+}
+.hero-img img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+}
+
+.about {
+    padding: 40px;
+}
+
+.skills {
+    padding: 40px;
+}
+.skills-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.skill-card {
+    background: #1E3A8A;
+ color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+.skill-card:hover {
+    background: #163371;
+    transform: scale(1.05);
+}
+
+.project-card {
+    background: white;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s;
+}
+.project-card:hover {
+    background: #eaeaea;
+    transform: translateY(-3px);
+}
+
+.contact {
+    padding: 40px;
+ text-align: left;
+    padding-left: 40px;
+}
+.contact form {
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+}
+form label {
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    color: #333;
+}
+input, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+button {
+    background: #1E3A8A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #103063;
+}
+
+footer {
+    background: #1E3A8A;
+    color: white;
+    padding: 15px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-to-top {
+    display: inline-block;
+    background: #1E3A8A;
+    color: white;
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    float: right;
+    margin-right: 40px;
+    margin-top: 8px;
+    transition: background 0.3s;
+}
+.back-to-top:hover {
+    background: #0a1b4a;
+}
+
+@keyframes colorChange {
+    0% { color: #f57c00; }
+    50% { color: #FF5733; }
+    100% { color: #f57c00; }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills-box {
+        grid-template-columns: 1fr;
+    }
+    .back-to-top {
+        float: none;
+        display: block;
+        text-align: center;
+        margin: 10px auto;}
+}
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <h2>My Portfolio</h2>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I am</h1>
+            <h1 class="highlight">Full Stack Developer</h1>
+            <p>Building modern web applications with MERN stack.</p>
+        </div>
+        <div class="hero-img">
+            <img src="c:\Users\Dell\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\TempState\21327BA33B3689E713CDFF1641128004\WhatsApp Image 2025-10-19 at 22.51.15_dffdc143.jpg" alt="Profile Image">
+        </div>
+    </section>
+         <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>Hello! My name is Pragati, and I am currently learning web development. This is my first portfolio website where I showcase my passion for creating interactive and responsive web pages. I am a student at K.R.mangalam Univercity, pursuing B.Tech, and deeply interested in technology and coding.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-box">
+            <div class="skill-card">HTML<br><small>Beginner</small></div>
+            <div class="skill-card">CSS<br><small>Beginner</small></div>
+            <div class="skill-card">JavaScript<br><small>Learning</small></div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>A simple HTML & CSS webpage.</p>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Another awesome mini project.</p>
+        </div>
+    </section>
+
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+       <form>
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Message:</label>
+        <textarea rows="4" placeholder="Write your message" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Pragati. All rights reserved.</p>
+</footer>
+
+<a href="#" class="back-to-top">↑ Back to Top</a>
+
+</body>
+</html>

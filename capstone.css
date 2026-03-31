@@ -1,0 +1,116 @@
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.contact-box {
+    width: 350px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.contact-box h2 {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.contact-box textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-box button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.map {
+    position: relative;
+}
+
+.map img {
+    width: 350px;
+    height: 250px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.map-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.footer {
+    background: #111;
+    color: white;
+    padding: 50px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.footer-box h3 {
+    color: #f7b733;
+    margin-bottom: 14px;
+}
+
+.footer-box p {
+    margin: 6px 0;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.footer-box p:hover {
+    color: #1e90ff;
+    transform: translateX(5px);
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #1e90ff;
+}
+
+.footer .copyright {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+    opacity: 0.7;
+}

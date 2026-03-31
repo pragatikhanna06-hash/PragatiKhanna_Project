@@ -1,96 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Event Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Projects Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <h1>🎯 Smart Event Dashboard</h1>
+  <header style="position: sticky;top: 0%;">
+    <h1>Code Legacy</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="browse.html">Browse Projects</a>
+      <a href="submit.html">Submit Project</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+  <div id="hero01">
+    <section class="hero">
+      <div>
+        <h2>Explore Senior Projects</h2>
+        <p>Discover innovative projects created by senior students</p>
+      </div>
+    </section>
 
-    <div class="container">
+    <section class="filters">
+      <select>
+        <option>Category</option>
+      </select>
+      <select>
+        <option>Year</option>
+      </select>
+      <select>
+        <option>Technology</option>
+      </select>
+      <button>Search</button>
+    </section>
+  </div>
+  </section>
 
-        <!-- Dashboard Form Section -->
-        <div class="dashboard-container">
-            <h2>Add New Event</h2>
+  <section class="section">
+    <h3>Featured Projects</h3>
+    <div class="grid">
+      
 
-            <form id="eventForm">
-                <label>
-                    Event Title:
-                    <input type="text" id="eventTitle" required>
-                </label>
-                <br><br>
+      <div class="card">
+        <div class="card-header">
+          <span class="category ai">AI</span>
+          <span class="level beginner">Beginner</span></div>
+          <h3>Eco-Friendly Vehicle</h3>
+          <p>Solar-powered electric vehicle design.</p>
+          <div class="tags">
+          <span>Solar</span><span>Sustainable</span>
+          </div>
+          <button class="btn-view">View Project</button>
+      </div>
 
-                <label>
-                    Event Date:
-                    <input type="date" id="eventDate" required>
-                </label>
-                <br><br>
+      <div class="card">
+        <div class="card-header">
+          <span class="category ai">AI</span>
+          <span class="level beginner">Beginner</span></div>
+          <h3>AI Health Diagnosis</h3>
+          <p>Machine learning system for medical diagnosis.</p>
+          <div class="tags">
+            <span>Python</span><span>Healthcare</span>
+          </div>
+          <button class="btn-view">View Project</button>
+      </div>
 
-                <label>
-                    Category:
-                    <select id="eventCategory" required>
-                        <option value="Conference">Conference</option>
-                        <option value="Workshop">Workshop</option>
-                        <option value="Meetup">Meetup</option>
-                        <option value="Webinar">Webinar</option>
-                        <option value="Social">Social</option>
-                    </select>
-                </label>
-                <br><br>
 
-                <label>
-                    Description:
-                    <textarea id="eventDescription" required></textarea>
-                </label>
-                <br><br>
-
-                <button type="submit" id="submit">Add Event</button>
-            </form>
+      <div class="card">
+        <div class="card-header">
+          <span class="category web">Web Dev</span>
+          <span class="level beginner">Beginner</span>
         </div>
-
-        <hr>
-
-        <!-- Events Section -->
-        <div class="events-container">
-            <h2>My Events</h2>
-
-            <button id="clearAllBtn">Clear All Events</button>
-            <button id="addSampleBtn">Add Sample Events</button>
-
-            <div id="eventContainer">
-                <div class="empty-state">
-                    No events yet. Add your first event!
-                </div>
-            </div>
+        <h3>Smart Attendance</h3>
+        <p>Face-recognition system to automate student attendance.</p>
+        <div class="tags">
+          <span>#Python</span> <span>#OpenCV</span>
         </div>
+        <button class="btn-view">View Project</button>
+      </div>
 
-        <!-- Event Card Popup -->
-        <div class="card" id="card">
-            <div class="close-btn" onclick="closeCard()">&times;</div>
-            
-            <div class="title" id="cardTitle"></div>
-            <div class="date" id="cardDate"></div>
-            <div class="badge" id="cardCategory"></div>
-            <div class="description" id="cardDescription"></div>
+      <div class="card">
+        <div class="card-header">
+          <span class="category ai">AI / ML</span>
+          <span class="level intermediate">Intermediate</span>
         </div>
-
-        <hr>
-
-        <!-- DOM Demo Section -->
-        <div class="dom-demo-container">
-            <h2>DOM Manipulation Demo</h2>
-
-            <div id="demoContent">
-                Press any key to see the difference!
-            </div>
+        <h3>Crop Predictor</h3>
+        <p>Identifying plant diseases using CNN image models.</p>
+        <div class="tags">
+          <span>#TensorFlow</span> <span>#CNN</span>
         </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category iot">IoT</span>
+          <span class="level advanced">Advanced</span>
+        </div>
+        <h3>Smart Grid</h3>
+        <p>Monitoring electricity usage via Arduino and Cloud.</p>
+        <div class="tags">
+          <span>#C++</span> <span>#IoT</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category blockchain">Blockchain</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>E-Voting System</h3>
+        <p>Secure voting using Ethereum smart contracts.</p>
+        <div class="tags">
+          <span>#Solidity</span> <span>#Web3</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category app">App Dev</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Campus Navigator</h3>
+        <p>Internal map app for college students.</p>
+        <div class="tags">
+          <span>#Flutter</span> <span>#Dart</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category cyber">CyberSec</span>
+          <span class="level advanced">Advanced</span>
+        </div>
+        <h3>Network Sniffer</h3>
+        <p>Real-time packet analysis for security threats.</p>
+        <div class="tags">
+          <span>#Python</span> <span>#Scapy</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category cloud">Cloud</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Auto Cloud Sorter</h3>
+        <p>Organizing AWS S3 buckets using Lambda.</p>
+        <div class="tags">
+          <span>#AWS</span> <span>#NodeJS</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category data">Data Science</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Sales Forecast</h3>
+        <p>Predicting retail trends using historical data.</p>
+        <div class="tags">
+          <span>#Pandas</span> <span>#Matplotlib</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category vr">VR / AR</span>
+          <span class="level advanced">Advanced</span>
+        </div>
+        <h3>Virtual Campus</h3>
+        <p>A 3D VR tour of the University campus.</p>
+        <div class="tags">
+          <span>#Unity</span> <span>#C#</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category ecom">E-Commerce</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Book Exchange</h3>
+        <p>Student marketplace for second-hand books.</p>
+        <div class="tags">
+          <span>#React</span> <span>#Firebase</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category game">Game Dev</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Space Invader</h3>
+        <p>Classic arcade game built with Python.</p>
+        <div class="tags">
+          <span>#PyGame</span> <span>#Python</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category nlp">NLP</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Chatbot Assistant</h3>
+        <p>AI assistant to answer college queries.</p>
+        <div class="tags">
+          <span>#NLTK</span> <span>#Python</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
 
     </div>
+    <h3>Submitted Projects</h3>
+<div id="projects-wrapper" class="grid"></div>
+    </div>
+    <br><br>
+    <section class="cta">
+      <h2>Share Your Project!</h2>
+      <p>Upload your project and inspire juniors</p>
+      <!-- <button id="addSampleBtn">Add Sample Events</button> -->
+      <button type="button"  id="addSampleBtn" onclick="window.location.href='submit.html'">Submit Your Project</button>
+    </section>
 
-    <script src="script.js"></script>
+    <footer>
+      © 2026 Project Name
+    </footer>
+
+    <script>
+const container = document.getElementById("projects-wrapper");
+let projects = JSON.parse(localStorage.getItem("projects")) || [];
+
+projects.forEach(project => {
+
+    const box = document.createElement("div");
+    box.className = "project-box";
+
+    let tagsHTML = "";
+    project.tags.split(",").forEach(tag => {
+        tagsHTML += `<span>${tag.trim()}</span>`;
+    });
+
+    box.innerHTML = `
+        <div class="project-top">
+            <span class="project-category">${project.category}</span>
+            <span class="project-level">${project.level}</span>
+        </div>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <div class="project-tags">${tagsHTML}</div>
+        <button class="project-btn">View Project</button>
+    `;
+
+    container.appendChild(box);
+});
+</script>
+
+
+    <script src="./index.js"></script>
 </body>
 </html>

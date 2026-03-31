@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Projects | Student Portal</title>
+    <style>
+        :root {
+            --primary-color: #4c0ef4;
+            --accent-color: #667eea;
+            --bg-light: #f8f9fa;
+            --text-main: #2d3436;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Search & Filter Section */
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .search-bar {
+            flex: 2;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .filter-select {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+            border: 1px solid #eee;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .tag {
+            background: #eef2ff;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin: 15px 0 10px 0;
+            color: var(--text-main);
+        }
+
+        .author {
+            color: #636e72;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+            .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card h4 { margin-bottom: 8px; }
+    .card p { font-size: 14px; margin-bottom: 12px; }
+    .tags span {
+      background: #eef2f7;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-right: 6px;
+    }
+
+    .card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+    .tags span {
+      background: #eef2f7;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-right: 6px;
+    }
+    .category {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.tags {
+    margin: 15px 0;
+}
+
+.tags span {
+    font-size: 12px;
+    color: #999;
+    margin-right: 10px;
+}
+
+
+.level { font-size: 10px; color: #999; }
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #666;
+    height: 40px;
+}
+.btn-view {
+  background:  #0537ec;
+      color: white;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0651f4;
+    /* background: transparent;
+    color: #2563eb; */
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-view:hover {
+    background: #0c0146;
+    color: white;
+}
+
+.web { background: #e0f2fe; color: #0369a1; }
+.ai { background: #dcfce7; color: #15803d; }
+.iot { background: #f3e8ff; color: #7e22ce; }
+.blockchain { background: #ffedd5; color: #c2410c; }
+.app { background: #dcfce7; color: #15803d; }
+.cyber { background: #f3e8ff; color: #7e22ce; }
+.cloud { background: #e0f2fe; color: #0369a1; }
+.data { background: #dcfce7; color: #15803d; }
+.vr { background: #f3e8ff; color: #7e22ce; }
+.ecom { background: #ffedd5; color: #c2410c; }
+.nlp { background: #dcfce7; color: #15803d; }
+.game { background: #dcfce7; color: #7e22ce; }
+
+
+        .view-btn:hover { background-color: #1708bf; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Project Gallery</h1>
+        <p>Explore and learn from fellow students' work</p>
+    </header>
+
+    <div class="controls">
+        <input type="text" class="search-bar" placeholder="Search by project title or student name...">
+        <select class="filter-select">
+            <option>All Departments</option>
+            <option>Computer Science</option>
+            <option>Business</option>
+            <option>Design</option>
+        </select>
+    </div>
+
+    <div class="project-grid">
+        <div class="project-card">
+            <div class="card-content">
+                <span class="tag">Computer Science</span>
+                <h3>AI Chatbot for Campus</h3>
+                <p class="author">By: Sarah Jenkins • Jan 2026</p>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="card-content">
+                <span class="tag">Design</span>
+                <h3>Sustainability Branding</h3>
+                <p class="author">By: Marcus Thorne • Feb 2026</p>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="card-content">
+                <span class="tag">Business</span>
+                <h3>Fintech Market Analysis</h3>
+                <p class="author">By: Elena Rodriguez • Dec 2025</p>
+                <a href="#" class="view-btn">View Details</a>
+            </div>
+        </div>
+
+
+         <div class="card">
+        <div class="card-header">
+          <span class="category ai">AI</span>
+          <span class="level beginner">Beginner</span></div>
+          <h3>Eco-Friendly Vehicle</h3>
+          <p>Solar-powered electric vehicle design.</p>
+          <div class="tags">
+          <span>Solar</span><span>Sustainable</span>
+          </div>
+          <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category ai">AI</span>
+          <span class="level beginner">Beginner</span></div>
+          <h3>AI Health Diagnosis</h3>
+          <p>Machine learning system for medical diagnosis.</p>
+          <div class="tags">
+            <span>Python</span><span>Healthcare</span>
+          </div>
+          <button class="btn-view">View Project</button>
+      </div>
+
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category web">Web Dev</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Smart Attendance</h3>
+        <p>Face-recognition system to automate student attendance.</p>
+        <div class="tags">
+          <span>#Python</span> <span>#OpenCV</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category ai">AI / ML</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Crop Predictor</h3>
+        <p>Identifying plant diseases using CNN image models.</p>
+        <div class="tags">
+          <span>#TensorFlow</span> <span>#CNN</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category iot">IoT</span>
+          <span class="level advanced">Advanced</span>
+        </div>
+        <h3>Smart Grid</h3>
+        <p>Monitoring electricity usage via Arduino and Cloud.</p>
+        <div class="tags">
+          <span>#C++</span> <span>#IoT</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category blockchain">Blockchain</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>E-Voting System</h3>
+        <p>Secure voting using Ethereum smart contracts.</p>
+        <div class="tags">
+          <span>#Solidity</span> <span>#Web3</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category app">App Dev</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Campus Navigator</h3>
+        <p>Internal map app for college students.</p>
+        <div class="tags">
+          <span>#Flutter</span> <span>#Dart</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category cyber">CyberSec</span>
+          <span class="level advanced">Advanced</span>
+        </div>
+        <h3>Network Sniffer</h3>
+        <p>Real-time packet analysis for security threats.</p>
+        <div class="tags">
+          <span>#Python</span> <span>#Scapy</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category cloud">Cloud</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Auto Cloud Sorter</h3>
+        <p>Organizing AWS S3 buckets using Lambda.</p>
+        <div class="tags">
+          <span>#AWS</span> <span>#NodeJS</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category data">Data Science</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Sales Forecast</h3>
+        <p>Predicting retail trends using historical data.</p>
+        <div class="tags">
+          <span>#Pandas</span> <span>#Matplotlib</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category vr">VR / AR</span>
+          <span class="level advanced">Advanced</span>
+        </div>
+        <h3>Virtual Campus</h3>
+        <p>A 3D VR tour of the University campus.</p>
+        <div class="tags">
+          <span>#Unity</span> <span>#C#</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category ecom">E-Commerce</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Book Exchange</h3>
+        <p>Student marketplace for second-hand books.</p>
+        <div class="tags">
+          <span>#React</span> <span>#Firebase</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category game">Game Dev</span>
+          <span class="level beginner">Beginner</span>
+        </div>
+        <h3>Space Invader</h3>
+        <p>Classic arcade game built with Python.</p>
+        <div class="tags">
+          <span>#PyGame</span> <span>#Python</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="category nlp">NLP</span>
+          <span class="level intermediate">Intermediate</span>
+        </div>
+        <h3>Chatbot Assistant</h3>
+        <p>AI assistant to answer college queries.</p>
+        <div class="tags">
+          <span>#NLTK</span> <span>#Python</span>
+        </div>
+        <button class="btn-view">View Project</button>
+      </div>
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
