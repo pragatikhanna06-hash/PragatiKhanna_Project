@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------- HEADER ---------------- */
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #a7a8ff, #63b3ed);
+}
+
+h2 {
+    color: rgb(79, 79, 233);
+    padding-bottom: 15px;
+}
+
+/* ---------------- MAIN CONTAINER ---------------- */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #a7a8ff, #63b3ed);
+}
+
+/* ---------------- FORM SECTION ---------------- */
+
+.dashboard-container {
+    width: 330px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(246, 247, 247);
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------- INPUTS ---------------- */
+
+input, select, textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #8c8ed1, #4ea9eb);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#submit {
+    height: 35px;
+    width: 100%;
+}
+
+#clearAllBtn,
+#addSampleBtn {
+    height: 35px;
+    width: 48%;
+}
+
+/* ---------------- EVENTS SECTION ---------------- */
+
+.events-container {
+    width: 500px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(251, 252, 253);
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.events-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.empty-state {
+    padding: 50px;
+    text-align: center;
+    color: gray;
+}
+
+/* ---------------- EVENT CARD (LIST) ---------------- */
+
+.event-card {
+    background: #eef2ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+}
+
+.event-card span {
+    display: inline-block;
+    background: #4ea9eb;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ---------------- POPUP CARD ---------------- */
+
+.card {
+    width: 300px;
+    background: #cfd6df;
+    border-radius: 12px;
+    padding: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    display: none;
+    z-index: 1000;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: #ff6b6b;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ---------------- DOM DEMO ---------------- */
+
+.dom-demo-container {
+    width: 100%;
+    max-width: 920px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(253, 254, 254);
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.dom-demo-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+#demoContent {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+    .events-container,
+    .dashboard-container {
+        width: 100%;
+    }
+}
